@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GoogleDrive.Console
+﻿namespace GoogleDrive.Console
 {
     public class ArquivoLog
     {
@@ -25,27 +19,27 @@ namespace GoogleDrive.Console
 
         }
 
-        public async Task<string> IncluirLinha(Exception ex, string requestPath, string mensagemBasica)
-        {
+        //public async Task<string> IncluirLinha(Exception ex, string requestPath, string mensagemBasica)
+        //{
 
-            // Nome do arquivo com base na data
-            string nomeArquivo = Path.Combine(_caminhoLog, $"error_log_{DateTime.Now:dd-MM-yyyy}.txt");
+        //    // Nome do arquivo com base na data
+        //    string nomeArquivo = Path.Combine(_caminhoLog, $"error_log_{DateTime.Now:dd-MM-yyyy}.txt");
 
-            string separador = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} -----------------------------------------------------------------------------{Environment.NewLine}";
-            string mensagemRetorno = $"TratamentoErroMiddleware | Path: {requestPath} | {mensagemBasica}: {ex.Message}{Environment.NewLine}";
+        //    string separador = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} -----------------------------------------------------------------------------{Environment.NewLine}";
+        //    string mensagemRetorno = $"TratamentoErroMiddleware | Path: {requestPath} | {mensagemBasica}: {ex.Message}{Environment.NewLine}";
 
-            var mensagemPersonalizada = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | {mensagemRetorno}{Environment.NewLine}";
+        //    var mensagemPersonalizada = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} | {mensagemRetorno}{Environment.NewLine}";
 
-            File.AppendAllText(nomeArquivo, separador);
-            File.AppendAllText(nomeArquivo, mensagemPersonalizada);
+        //    File.AppendAllText(nomeArquivo, separador);
+        //    File.AppendAllText(nomeArquivo, mensagemPersonalizada);
 
-            System.Console.WriteLine($"Erro: {mensagemPersonalizada}");
+        //    System.Console.WriteLine($"Erro: {mensagemPersonalizada}");
 
-            Error(mensagemPersonalizada);
+        //    Error(mensagemPersonalizada);
 
 
-            return mensagemRetorno;
-        }
+        //    return mensagemRetorno;
+        //}
 
         public static void Padrao(string menssagem, ConsoleColor foreground, ConsoleColor background)
         {
